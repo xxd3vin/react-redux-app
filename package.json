@@ -20,7 +20,8 @@
     "webpack:ybz": "cross-env NODE_ENV=production webpack --config webpack.config.ybz.js --profile --progress",
     "webpack:ybz-debug": "cross-env NODE_ENV=production webpack --config webpack.config.ybz-debug.js --profile --progress",
     "webpack:yzb": "cross-env NODE_ENV=production webpack --config webpack.config.yzb.js --profile --progress",
-    "webpack:yzb-debug": "cross-env NODE_ENV=production webpack --config webpack.config.yzb-debug.js --profile --progress"
+    "webpack:yzb-debug": "cross-env NODE_ENV=production webpack --config webpack.config.yzb-debug.js --profile --progress",
+    "taobao": "npm i --registry=https://registry.npm.taobao.org --loglevel=silly"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",
