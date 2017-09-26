@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import table from './table';
 import arch from './arch'; // 基础档案
 import accountingSubject from './accountingSubject'; // 基础档案
 import mappingDef from './mappingDef'; // 转换规则定义
@@ -16,6 +17,7 @@ import ncSync from './ncSync';
 import demo from './demo';
 
 const rootReducer = combineReducers({
+  table,
   arch,
   accountingSubject,
   mappingDef,

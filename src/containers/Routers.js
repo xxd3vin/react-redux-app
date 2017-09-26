@@ -5,6 +5,8 @@ import App from './App';
 import NoMatch from '../components/NoMatch';
 import Welcome from './Welcome';
 
+import TableContainer from './BaseDoc/TableContainer';
+
 import ArchContainer from './BaseDoc/ArchContainer'; // 基础档案
 import AccountingSubject from './AccountingSubject'; // 会计平台科目
 import BaseDocIndex from './BaseDoc/BaseDocIndex'; // 基础档案列表页面
@@ -35,6 +37,7 @@ import DemoTreeContainer from './DemoTreeContainer';
 const Routers = (
   <Router history={hashHistory}>
     <Route path="/" component={Welcome} />
+    <Route path="/table" component={TableContainer} />
     <Route path="/app" component={App}>
       <IndexRoute component={Welcome} />
       <Route path="/welcome" component={Welcome} />

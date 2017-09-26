@@ -41,6 +41,7 @@ app.get('/', (req, res) => {
 });
 app.use('/', express.static(path.join(__dirname, 'client')));
 
+app.use(require('./server/routes/fakeApiTable')());
 app.use(require('./server/routes/fakeApiArch')());
 app.use(require('./server/routes/fakeApiRole')());
 app.use(require('./server/routes/fakeApiPermission')());
