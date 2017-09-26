@@ -1,0 +1,141 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "Helvetica Neue", "Microsoft Yahei", Arial, sans-serif;
+}
+.b0 {
+  border: 0;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mb0 {
+  margin-bottom: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+.pointer {
+  cursor: pointer;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.oh {
+  overflow: hidden;
+}
+.ws {
+  white-space: nowrap;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.clearfix {
+  display: inline-block;
+}
+/*** 通用色变量 ***/
+/**************************** 友报账UI基础设计规范 begin ***************************/
+.btn-bar {
+  height: 64px;
+  padding: 15px 0;
+}
+.btn-bar > div {
+  display: inline-block;
+}
+.ssc-grid .table {
+  margin-bottom: 0;
+  color: #333333;
+  border: 1px solid #e5e5e5;
+}
+.ssc-grid .table thead tr {
+  border-width: 1px;
+  color: #666666;
+  background-color: #f0f9fb;
+}
+.ssc-grid .table thead tr th {
+  border: 0;
+  white-space: nowrap;
+  font-weight: normal;
+}
+.ssc-grid .table thead tr th:hover {
+  background-color: #f7f7f7;
+}
+.ssc-grid .table tbody tr {
+  border-top: 1px solid #e5e5e5;
+}
+.ssc-grid .table tbody tr td {
+  border: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ssc-grid .table tbody tr td:not(:last-child) {
+  max-width: 150px;
+}
+.ssc-grid .table tbody tr td:last-child > a,
+.ssc-grid .table tbody tr td:last-child span {
+  color: transparent;
+  margin-right: 10px;
+}
+.ssc-grid .table tbody tr:hover {
+  border: 1px solid #d3d3d3;
+  background-color: #f7f7f7;
+}
+.ssc-grid .table tbody tr:hover td {
+  border: 0;
+}
+.ssc-grid .table tbody tr:hover td:last-child > a,
+.ssc-grid .table tbody tr:hover td:last-child > span {
+  color: #03c0ff;
+  display: inline-block;
+  cursor: pointer;
+}
+.ssc-grid .table tbody tr:hover td:last-child > a:hover,
+.ssc-grid .table tbody tr:hover td:last-child > span:hover {
+  color: #16a5d5;
+}
+.pagination {
+  float: right;
+}
+.pagination li.active > a {
+  border-color: #03c0ff;
+  background-color: #03c0ff;
+}
+.pagination li.active > a:hover {
+  border-color: #40cbfa;
+  background-color: #40cbfa;
+}
+.pagination li.active > a:focus {
+  border-color: #16a5d5;
+  background-color: #16a5d5;
+}
+.content {
+  padding: 15px;
+}
+.btn.btn-default {
+  color: #03c0ff;
+  border-color: #03c0ff;
+}
+.btn.btn-default:hover {
+  color: #fff;
+  border-color: #40cbfa;
+  background-color: #40cbfa;
+}
+.btn.btn-default:focus,
+.btn.btn-default:active,
+.btn.btn-default.active {
+  color: #fff;
+  border-color: #16a5d5;
+  background-color: #16a5d5;
+}
+.server-message {
+  color: #fe631f;
+}

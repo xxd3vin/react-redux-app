@@ -1,0 +1,52 @@
+dist: trusty
+sudo: required
+
+language: node_js
+node_js:
+- '6'
+
+env:
+  - BROWSER=ChromeCi
+  - BROWSER=Firefox
+
+cache:
+  directories:
+  - node_modules
+
+before_install:
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+
+install:
+- wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+- sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+- sudo apt-get update -q
+- sudo apt-get install -q google-chrome-stable libfontconfig1
+- npm install
+
+script:
+#- npm run lint
+- npm run build:ybz
+- npm run build:yzb
+- npm test
+#after_success:
+#- curl http://101.200.74.182:8080/job/ssc30-admin/build?token=yonyou.com1988
+#before_deploy:
+#- cd patch
+#- zip -r ../patch.zip .
+#- cd ..
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure: cGRRRcIxI395CyVhKT9p+7dozUh0X6aroC1bzHO2joIWyF6bd603JRXwX3VorMzdLcweLgGhxvKtvtb+BUIoAWu1ij87u+db1nbrwqt4BnDARGggBExGYFSuo6Nvsk8DiyA2WR2UwwUPMvLDnUsDrtFsljrJ+190Z2iLZVBfNH6rgn2JjLhXH1wpAnUs4YmuNJXghushmWmgEQRUoIdD77z8HVJJIU+5f03zTClkUXaZEd93KOsTQCd1fRY6by8A6jwg+zBC7dzUv2p/ZaV5wBiG1deiZhpkUQOcIPVxo02iJVLZHFqE3qdZ1QrMndoUKQz2/HKq50uB4A5YJh9m8f6AGTw5xmRUbLBjVWLv92ywjqKt+wxDRnQtwkuXVpnAKwQANhuu9GnXdf7uzxEeu4W8WBllO0PIlKgyb+vMREw27FGlMxXaBn8yu1u0PCwTyEphsJeEddEqHM1df7k14pyv/gtKYpmUHSUY1AcAKnN+9tUhhDEknHyoE/ppOiNotuZUsEwgB3QM3E3zNMfFKxm/8W49QU8uYT5izOHJ+TNrq6ZNHcOhVr/dPOKLZUlJgBjtEvbqJCafRCD6UUleJvrfgoy2bxalxNrROC6Jx9ac56meTFMFWvDc/4wvAc7OXOeYP1QHgkCGO7wMHUzPg2hFlyW+NGOa3WvlJkYTuxI=
+#  file: patch.zip
+#  skip_cleanup: true
+#  on:
+#    tags: true
+#    repo: xxd3vin/bgy-portalbillquery
+
+addons:
+  sauce_connect:
+    username: "xxd3vin2"
+    access_key: "29fc1dbc-3387-4497-9573-e0960ce6a8f4"

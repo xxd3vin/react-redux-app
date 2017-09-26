@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>友账表调试页面</title>
+<link rel="shortcut icon" href="/favicon.ico" type="images/x-icon"/>
+<link rel="Bookmark" href="/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- fuck-formula-start 公式编辑器依赖 -->
+<link href="https://fi.yonyoucloud.com/css/jquery.treeview.css" rel="stylesheet">
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://fi.yonyoucloud.com/common/libs/js/jquery.treeview.js"></script>
+<!-- fuck-formula-end  -->
+
+</head>
+<body>
+<div id="root"></div>
+<script>
+var G_SERVERS = [
+  /* 0 */ '127.0.0.1:3009', // 使用本地的expressjs服务器伪造数据
+  /* 1 */ '10.1.218.36:8080', // 郭老师私服
+  /* 2 */ '10.3.14.240', // 后端某台测试服务器，可能是友报账的
+  /* 3 */ '10.3.14.238', // 友账表测试服务器
+];
+// var G_SCHEME = '';
+var G_HOST_PORT = G_SERVERS[0];
+var G_PATH_PREFIX = '/ficloud';
+</script>
+<script src="/static/common.js"></script>
+<script src="/static/bundle.js"></script>
+</body>
+</html>

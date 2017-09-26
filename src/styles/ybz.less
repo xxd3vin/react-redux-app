@@ -1,0 +1,248 @@
+// common.less 中的通用变量
+html { font-size: 62.5%; }  // 16px = 1.6rem
+body{
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "Helvetica Neue","Microsoft Yahei",Arial,sans-serif;
+  background-color: #f9f9f9;
+}
+.blank {
+  background: url("../images/blank.png");
+}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+.b0{border:0;}
+.br0{border-radius:0;}
+.br2{border-radius:2px;}
+.mr10{margin-right:10px;}
+.mb0{margin-bottom:0;}
+.clearfix{display:inline-block;}
+.pointer{cursor:pointer;}
+.fl{float:left;}
+.fr{float:right;}
+.tc{text-align:center;}
+.oh{overflow:hidden;}
+.ws{white-space:nowrap;}
+.ellipsis{.ws;.oh;text-overflow:ellipsis;}
+.clearfix{display:inline-block;}
+.fff{background-color:#fff;}
+
+/*** 通用色变量 ***/
+//@mainColor: #1baede;      // 主色调（icon、提交按钮等）
+//@darkColor: #189cc7;      // 深色调（按钮等悬停色）
+//@btnHover: #f1f1f1;       // 普通按钮hover背景色
+//@iconHover: #13799b;      // icon悬停色
+//@hoverColor: #e9f7fc;     // 鼠标悬停色
+//@focusColor: #c4eaf6;     // 点击选中色
+//@borderColor: #cecece;    // 边框颜色
+//@backColor: #eeeff1;      // 表头背景色
+
+/**************************** 友报账UI基础设计规范 begin ***************************/
+// 主题色
+@mainColor: #f63641;            // 主色调 （注：确认保存按钮、default按钮hover背景色等）
+@hoverColor:#fa525c;            // 主色调的hover背景色
+@darkColor: #e62f39;            // 主色选中时色值 （注：确认保存按钮focus色值）
+@backColor: #f9f9f9;            // 主题大背景色
+// 边框色
+@borderColor:#e5e5e5;           // 边框色
+@borderHoverColor:#d3d3d3;      // 边框hover时色值
+// 表格、文字色
+@importantFontColor: #333333;   // 用于重要文字信息、表单内容等 （如交通报账单等）
+@gridHeaderFontColor:#666666;   // 用于表头标题信息 （如事由、类型、日期等）
+@gridHeaderBackColor:#f0f9fb;   // 表头背景色
+@gridHoverBackColor: #f7f7f7;   // 表格列表hover背景色
+@gridSelectedColor: #e8f7fc;    // 表格选中行背景色
+// 其他色
+@placeholderColor: #c7c7c7;     // 辅助色，搜索框内提示颜色
+@errorColor: #fe631f;           // 错误信息提示色、警告框颜色
+@labelColor: #8d8d8d;           // 标签字体颜色
+
+.content{
+  padding: 15px;
+}
+
+// a链接颜色
+a {
+  color: @mainColor;
+  text-decoration: none;
+  outline: none;
+  &:hover {
+    color: @hoverColor;
+    .pointer;
+    text-decoration: none;
+  }
+  &:focus {
+    color: @darkColor;
+    text-decoration: none;
+  }
+}
+
+// .btn样式重置
+.btn {
+  .br2;
+  padding: 5px 20px;
+  &:focus {
+    outline: none;
+  }
+}
+.input-group-btn .btn {
+  padding: 6px 12px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.btn.btn-primary {      // 确认 保存 按钮
+  color: #fff;
+  border: 1px solid @hoverColor;
+  background-color: @mainColor;
+  box-sizing: border-box;
+  &:hover {
+    border-color: @hoverColor;
+    background-color: @hoverColor;
+  }
+  &:focus, &:active, &.active {
+    border-color: @darkColor;
+    background-color: @darkColor;
+  }
+}
+.btn.btn-default {      // 取消 一般 按钮
+  &:hover {
+    color: #fff;
+    border-color: @hoverColor;
+    background-color: @hoverColor;
+  }
+  &:focus, &:active, &.active {
+    color: #fff;
+    border-color: @darkColor;
+    background-color: @darkColor;
+  }
+}
+
+// grid表格顶部的按钮条
+.btn-bar {
+  height: 64px;
+  padding: 15px 0;
+  >div {
+    .clearfix;
+  }
+  .btn-default {
+    color: @mainColor;
+    border-color: @mainColor;
+  }
+}
+
+// ssc-grid 组件 表格默认样式
+.ssc-grid {
+  .fff;
+  .table {
+    .mb0;
+    color: @importantFontColor;
+    border: 1px solid @borderColor;
+    thead tr{
+      border-width: 1px;
+      color: @gridHeaderFontColor;
+      background-color: @gridHeaderBackColor;
+      th{
+        .b0;
+        .ws;
+        font-weight: normal;
+        //&:hover {
+        //  background-color: @gridHoverBackColor;
+        //}
+      }
+      th:first-child {
+        padding-left: 20px;
+      }
+    }
+    tbody tr {
+      border-top: 1px solid @borderColor;
+      td {
+        .b0;
+        .ellipsis;
+        max-width: 150px;
+      }
+      td:first-child {
+        padding-left: 20px;
+      }
+      td:last-child >a, td:last-child span{
+        color: transparent;
+        .mr10;
+      }
+      &:hover {
+        td { .b0; }
+        background-color: @gridHoverBackColor;
+        td:last-child >a, td:last-child >span {
+          color: @mainColor;
+          .clearfix;
+          .pointer;
+          &:hover {
+            color: @hoverColor;
+          }
+          &:focus, &:active {
+            color: @darkColor;
+          }
+        }
+      }
+    }
+    tbody tr.selected {
+      border: 1px solid @mainColor;
+      background-color: @gridSelectedColor;
+    }
+  }
+}
+
+// 翻页 pagination
+.pagination {
+  .fr;
+  li.active>a {
+    border-color: @mainColor;
+    background-color: @mainColor;
+    &:hover {
+      border-color: @hoverColor;
+      background-color: @hoverColor;
+    }
+    &:focus {
+      border-color: @darkColor;
+      background-color: @darkColor;
+    }
+  }
+}
+
+// modal弹出框
+.modal-dialog {
+  margin-top: 11%;
+  .modal-content {
+    .br0;
+  }
+  .modal-header {
+    .tc;
+    color: #fff;
+    background-color: @mainColor;
+    padding: 10px 15px;
+    .close {
+      color: #fff;
+      opacity: 1;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .form-horizontal {
+    >div:last-child {
+      button {
+        min-width: 100px;
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+
+// 错误信息字体色
+.server-message {
+  color: @errorColor;
+}
+// 表单选中状态
+.form-control:focus {
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

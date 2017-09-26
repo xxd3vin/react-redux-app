@@ -1,0 +1,350 @@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@8:@@@@@@@@@@@@@@@@@@@@@@@@@@@@::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@8                         @@@:                          O@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@8  @@@@@@@@@@cO@@@@@@@@@@@@@@@@@@@@@@@.  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@8  @@@@  @@@@  @@@O  8@@@@@@@@@@@@@@@   @@@@@@@.   @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@8  @@@  o@@@  c@@@@@o  @@@@@@@@@@8@8  Cooc:.         c@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@O  @@                    @@@@@:       .:cCO8@@@@@@@@8   @@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@O  @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@. c@@@@@@@@  O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@c  @@@@@@@  c@@@@@@@@@@@@@@@@@@@@@@@. c@@@@@@@@  O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@  :@@@@@@             C@@@@@@                           .@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@  O@@@@8  .  @@@@@:  @@@@@@@@@@@@@@@  8@@@@@@@@  O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@  @@@@   @@@   C.  c@@@@@@@@@@@@@@@   @@@@@@@@@  O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@. .@    @@@@@@      @@@@@@@@@@@@@@   O@@@@@@@@@@  O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@8  @@@O@@@.     @@@@:      o@@@C    8@@@@@@@@@@@@  O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@c8@@@@@@@@@@@@@88@@@@@o@@@@@@@@@@@@@@@@oo8@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@import '../components/spinner/style.css';  // 加载loading 组件样式
+
+// common.less 中的通用变量
+html { font-size: 62.5%; }  // 16px = 1.6rem
+body{
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "Helvetica Neue","Microsoft Yahei",Arial,sans-serif;
+  background-color: #f9f9f9;
+}
+
+.blank {
+  background: url("../images/blank.png");
+}
+
+.b0{border:0;}
+.mr10{margin-right:10px;}
+.mb0{margin-bottom:0;}
+.clearfix{display:inline-block;}
+.pointer{cursor:pointer;}
+.fl{float:left;}
+.fr{float:right;}
+.oh{overflow:hidden;}
+.ws{white-space:nowrap;}
+.ellipsis{.ws;.oh;text-overflow:ellipsis;}
+.clearfix{display:inline-block;}
+.mt10{margin-top:10px;}
+.f12{font-size:12px;font-size:1.2rem;}
+.f17{font-size:17px;font-size:1.7rem;}
+.p0{padding:0;}
+.col-120 { width: 120px; }
+
+
+/**************************** 友账表UI基础设计规范 start ***************************/
+// 主题色
+@mainColor: #2CAEDE;            // 主色调 （注：一级按钮、顶部导航背景色、部分按钮、背景文字等）
+@backColor: #F9F9F9;            // 主题大背景色
+@darkColor: #16a5d5;            // 主色选中时色值
+@lightColor: #aaeeff;           // 比主色浅一级
+@headPortraitColor: #B5C9D4;    // 默认头像色
+// 导航色
+@navBarBorderColor: #0596c1;    // 头部导航条边框色
+@sideNavColor: #556071;         // 左侧导航背景色
+@sideNavHover: #909BAD;         // 左侧导航hover色
+@sideNavBorder: #606d7c;        // 左侧导航分割线色
+@twoNavHoverBackColor: #788497; // 二级导航hover
+@twoNavDownBackColor: #556071;  // 二级导航按下
+// 边框色
+@borderColor: #E6E6E6;          // 边框色
+@borderHoverColor: #D3D3D3;     // 边框hover时色值
+@btnBorderColor: #D8D9DA;       // 三级按钮(不重要操作按钮) 边框色
+// 按钮色
+@unSelectColor: #D2D2D2;        // 不可选择色 （不可点击按钮等）
+@btnHoverBackColor: #3AB8E7;    // 按钮鼠标经过
+@btnDownBackColor: #169DCE;     // 按钮按下状态色
+// 表格
+@gridHeaderBackColor: #f0f9fb;  // 表头背景色
+@gridHoverBackColor: #F7F7F7;   // 表格列表hover背景色
+// 文字色
+@wordFontColor: #333333;        // 一级标题文字色
+@twoWordFontColor: #666666;     // 二级文字色
+@otherFontColor: #999999;       // 备注信息、不太重要文字色
+// 其他色
+@placeholderColor: #c7c7c7;     // 辅助色，搜索框内提示颜色
+@errorColor: #fe631f;           // 错误信息提示色、警告框颜色
+@topUnSelectColor: #27A0CB;     // 顶部tab未选中填充色
+@topUnSelectBorderColor: #2694C4; // 顶部tab未选中描边色
+/**************************** 友账表UI基础设计规范 end ***************************/
+
+// 常用边框
+.b1-default { border: 1px solid @btnBorderColor; }
+.b1-primary { border: 1px solid @borderColor; }
+.b1-hover { border: 1px solid @btnHoverBackColor; }
+.b1-focus { border: 1px solid @btnDownBackColor; }
+
+// 按钮统一样式
+.btn {
+  border-radius: 0;
+  padding: 6px 20px;
+}
+
+.btn-outline {
+  outline: none;
+  outline-offset: 0;
+}
+
+.btn.btn-primary {              // 重要按钮
+  .f12;
+  background-color: @mainColor;
+  border-color: @mainColor;
+  box-sizing: border-box;
+  &:hover {
+    border-color: @btnHoverBackColor;
+    background-color: @btnHoverBackColor;
+    .btn-outline;
+  }
+  &:focus {
+    border-color: @btnDownBackColor;
+    background-color: @btnDownBackColor;
+    .btn-outline;
+  }
+}
+
+.btn.btn-default { // 一般按钮
+  .f12;
+  border-color: @btnBorderColor;
+  background-color: @backColor;
+  &:hover {
+    color: #FFF;
+    border-color: @btnHoverBackColor;
+    background-color: @btnHoverBackColor;
+    .btn-outline;
+  }
+  &:focus {
+    color: #FFF;
+    border-color: @btnDownBackColor;
+    background-color: @btnDownBackColor;
+    .btn-outline;
+  }
+}
+
+
+// 公共表格
+.ssc-grid {
+  table {
+    //table-layout: fixed;
+    .mb0;
+    color: @wordFontColor;
+    border: 1px solid @borderColor;
+    thead {
+      tr {
+        boder-width: 1px ;
+        color: @wordFontColor;
+        background-color: #FFF;
+        th {
+          .b0;
+          .ws;
+          height: 56px;
+          padding: 0 10px;
+          font: 700 14px/56px "SimSun";
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-top: 1px solid @borderColor;
+        background-color: #FFF;
+        td {
+          .b0;
+          .ellipsis;
+          max-width: 150px;
+          height: 35px;
+          padding: 0 10px;
+          font: 12px/35px "SimSun";
+          color: @wordFontColor;
+        }
+        td:last-child > a, td:last-child span {
+          color: transparent;
+          margin-right: 5px;
+        }
+        &:hover {
+          td{.b0;}
+          border: 1px solid @borderHoverColor;
+          background-color: @gridHoverBackColor;
+          td:last-child > a, td:last-child > span {
+            color: @mainColor;
+            .clearfix;
+            .pointer;
+            &:hover {
+              color: @darkColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 翻页 pagination
+  .pagination {
+    .fr;
+    li.active > a {
+      border-color: @mainColor;
+      background-color: @mainColor;
+      &:hover {
+        border-color: @btnHoverBackColor;
+        background-color: @btnHoverBackColor;
+      }
+      &:focus {
+        border-color: @darkColor;
+        background-color: @darkColor;
+      }
+    }
+  }
+}
+
+// 实体映射
+.head {
+   height: 34px;
+   margin-bottom: 10px;
+   .fr;
+}
+
+.btn-bar {    // ssc-30 新增按钮
+  height: 34px;
+  margin-bottom: 10px;
+}
+
+// 左树右表结构
+.ledger-content {
+  .mt10;
+  width: 100%;
+  .ledger-content-left {
+    .fl;
+    .b1-primary;
+    width: 230px;
+    max-width: 230px;
+    overflow-x: auto;
+    min-height: 300px;
+    height: auto;
+    background: #FFF;
+  }
+  .ledger-content-right {
+    margin-left: 250px;   // 左树右表 右边
+    overflow-x: auto;
+  }
+}
+
+// 左树结构
+.rc-tree {
+  padding: 14px;
+  .rc-tree-title {
+    font: 700 12px "SimSun";
+    color: @wordFontColor;
+  }
+  .rc-tree-node-selected {
+    background-color: #ffe6b0;
+    border: 1px #ffb951 solid;
+    opacity: 0.8;
+  }
+}
+.rc-tree li {
+  line-height: 30px;
+  .rc-tree-node-content-wrapper {
+    height: auto;
+  }
+}
+.rc-tree li span.rc-tree-switcher, .rc-tree li span.rc-tree-checkbox, .rc-tree li span.rc-tree-iconEle {
+  bakground-image: none;
+}
+.rc-tree li span.rc-tree-switcher.rc-tree-noline_close {
+  background: url(../images/rc-tree-noline_close.png) no-repeat 0 3px;
+  margin-right: 6px;
+}
+.rc-tree li span.rc-tree-switcher.rc-tree-noline_open {
+  background: url(../images/rc-tree-noline_open.png) no-repeat 0 0;
+  margin-right: 6px;
+}
+.rc-tree li span.rc-tree-switcher, .rc-tree li span.rc-tree-checkbox, .rc-tree li span.rc-tree-iconEle.rc-tree-icon__close  {
+  background: url(../images/rc-tree-icon__close.png) no-repeat;
+  margin-right: 6px;
+}
+.rc-tree li span.rc-tree-switcher, .rc-tree li span.rc-tree-checkbox, .rc-tree li span.rc-tree-iconEle.rc-tree-icon__open {
+  background: url(../images/rc-tree-icon__open.png) no-repeat;
+  margin-right: 6px;
+}
+.rc-tree li span.rc-tree-switcher, .rc-tree li span.rc-tree-checkbox, .rc-tree li span.rc-tree-iconEle.rc-tree-icon__docu {
+  background: url(../images/rc-tree-icon__docu.png) no-repeat;
+  margin-right: 6px;
+}
+.rc-tree li span.rc-tree-switcher, .rc-tree li span.rc-tree-checkbox, .rc-tree li span.rc-tree-iconEle.rc-tree-icon__docu + span.rc-tree-title {
+  font: 400 12px "SimSun";
+  color: @wordFontColor;
+}
+ul.rc-tree-child-tree.rc-tree-child-tree-open li.rc-tree-hover:hover {
+  background: rgb(247, 247, 247);
+}
+.rc-tree .rc-tree-node-selected {  // 左树结构 选中色
+  background-color: #E6F3FC;
+  border: 1px solid #ABD6EA;
+  opacity: 1;
+}
+
+// 公式编辑器
+.formula-tree-leaf {
+  padding-left: 16px;
+  background: url(../images/file.gif) 0 0 no-repeat;
+  cursor: pointer;
+}
+
+.formula-resizenone {
+  resize: none;
+  width: 569px;
+  margin-bottom: 10px;
+}
+
+.filetree {
+  padding-top: 10px;
+  height: 150px;
+  overflow-y: auto;
+}
+
+.filerefer {
+  padding-top: 10px;
+  height: 150px;
+}
+
+.none {
+  display: none !important;
+}
+
+// 顶部通栏
+.header {
+  .header-title {
+    display: block;
+    text-align: center;
+    span {
+      font-weight: 700;
+      .f17;
+      color: @wordFontColor;
+    }
+  }
+}
+
+.server-message{color:red}
+
+// spinner 加载圈颜色
+.svg-loader circle {
+  stroke: @mainColor;
+}

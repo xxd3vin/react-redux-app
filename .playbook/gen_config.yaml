@@ -1,0 +1,25 @@
+---
+- hosts: [10.3.14.238]
+  remote_user: root
+  tasks:
+    # Define file path
+    - name: Set remote file path here
+      set_fact: remote_file_path=/data/ficloud/uiresources/manaaccount/config.js
+ 
+    # Create a blank file
+    - name: Create a new file
+      file: path="{{ remote_file_path }}" state=touch
+
+    # Check remote file
+    - stat: path="{{ remote_file_path }}"
+      register: file_path
+
+    # Write file content in file_content variable
+    - set_fact: |
+        file_content="var G_SCHEME = 'http';
+        var G_HOST_PORT = '10.3.14.238';
+        var G_PATH_PREFIX = '/ficloud';"
+
+    # If file exist then copy content in remote file.
+    - copy: content="{{ file_content }}" dest="{{ remote_file_path }}"
+      when: file_path.stat.exists == true

@@ -1,0 +1,149 @@
+// common.less 中的通用变量
+html { font-size: 62.5%; }  // 16px = 1.6rem
+body{
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "Helvetica Neue","Microsoft Yahei",Arial,sans-serif;
+}
+.b0{border:0;}
+.mr10{margin-right:10px;}
+.mb0{margin-bottom:0;}
+.clearfix{display:inline-block;}
+.pointer{cursor:pointer;}
+.fl{float:left;}
+.fr{float:right;}
+.oh{overflow:hidden;}
+.ws{white-space:nowrap;}
+.ellipsis{.ws;.oh;text-overflow:ellipsis;}
+.clearfix{display:inline-block;}
+
+/*** 通用色变量 ***/
+//@mainColor: #1baede;      // 主色调（icon、提交按钮等）
+//@darkColor: #189cc7;      // 深色调（按钮等悬停色）
+//@btnHover: #f1f1f1;       // 普通按钮hover背景色
+//@iconHover: #13799b;      // icon悬停色
+//@hoverColor: #e9f7fc;     // 鼠标悬停色
+//@focusColor: #c4eaf6;     // 点击选中色
+//@borderColor: #cecece;    // 边框颜色
+//@backColor: #eeeff1;      // 表头背景色
+
+/**************************** 友报账UI基础设计规范 begin ***************************/
+// 主题色
+@mainColor: #03c0ff;            // 主色调 （注：确认保存按钮、default按钮hover背景色等）
+@hoverColor:#40cbfa;            // 主色调的hover背景色
+@darkColor: #16a5d5;            // 主色选中时色值 （注：确认保存按钮focus色值）
+@backColor: #f9f9f9;            // 主题大背景色
+// 边框色
+@borderColor:#e5e5e5;           // 边框色
+@borderHoverColor:#d3d3d3;      // 边框hover时色值
+// 表格、文字色
+@importantFontColor: #333333;   // 用于重要文字信息、表单内容等 （如交通报账单等）
+@gridHeaderFontColor:#666666;   // 用于表头标题信息 （如事由、类型、日期等）
+@gridHeaderBackColor:#f0f9fb;   // 表头背景色
+@gridHoverBackColor: #f7f7f7;   // 表格列表hover背景色
+// 其他色
+@placeholderColor: #c7c7c7;     // 辅助色，搜索框内提示颜色
+@errorColor: #fe631f;           // 错误信息提示色、警告框颜色
+@labelColor: #8d8d8d;           // 标签字体颜色
+
+// grid表格顶部的按钮条
+.btn-bar {
+  height: 64px;
+  padding: 15px 0;
+  >div {
+    .clearfix;
+  }
+}
+
+// ssc-grid 组件 表格默认样式
+.ssc-grid {
+  .table {
+    .mb0;
+    color: @importantFontColor;
+    border: 1px solid @borderColor;
+    thead tr{
+      border-width: 1px;
+      color: @gridHeaderFontColor;
+      background-color: @gridHeaderBackColor;
+      th{
+        .b0;
+        .ws;
+        font-weight: normal;
+        &:hover {
+          background-color: @gridHoverBackColor;
+        }
+      }
+    }
+    tbody tr {
+      border-top: 1px solid @borderColor;
+      td {
+        .b0;
+        .ellipsis;
+        //input {
+        //  background-image: url("../image/checked.png");
+        //}
+        //input[checked] {
+        //  background-image: url("../image/checked.png");
+        //}
+      }
+      td:not(:last-child){
+        max-width: 150px;
+      }
+      td:last-child >a, td:last-child span{
+        color: transparent;
+        .mr10;
+      }
+      &:hover {
+        td { .b0; }
+        border: 1px solid @borderHoverColor;
+        background-color: @gridHoverBackColor;
+        td:last-child >a, td:last-child >span {
+          color: @mainColor;
+          .clearfix;
+          .pointer;
+          &:hover { color: @darkColor; }
+        }
+      }
+    }
+  }
+}
+
+// 翻页 pagination
+.pagination {
+  .fr;
+  li.active>a {
+    border-color: @mainColor;
+    background-color: @mainColor;
+    &:hover {
+      border-color: @hoverColor;
+      background-color: @hoverColor;
+    }
+    &:focus {
+      border-color: @darkColor;
+      background-color: @darkColor;
+    }
+  }
+}
+
+.content{
+  padding: 15px;
+}
+
+.btn.btn-default {      // 取消 一般 按钮
+  color: @mainColor;
+  border-color: @mainColor;
+  &:hover {
+    color: #fff;
+    border-color: @hoverColor;
+    background-color: @hoverColor;
+  }
+  &:focus, &:active, &.active {
+    color: #fff;
+    border-color: @darkColor;
+    background-color: @darkColor;
+  }
+}
+
+.server-message {
+  color: @errorColor;
+}

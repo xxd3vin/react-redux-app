@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SSCComp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="STYLESHEET" type="text/css" href="./ssc-grid.css">
+
+<script src="//cdn.bootcss.com/react/15.4.2/react.js"></script>
+<script src="//cdn.bootcss.com/react/15.4.2/react-dom.js"></script>
+<script src="//cdn.bootcss.com/react-bootstrap/0.30.7/react-bootstrap.js"></script>
+
+<!-- 引入SSCComp全局变量 -->
+<script src="https://unpkg.com/ssc-grid@0.17.2/dist/ssc-grid.min.js"></script>
+
+</head>
+<body>
+<div id="root"></div>
+<script>
+var SSCGrid = SSCComp.Grid;
+
+const tableData = [
+  {
+    id: '11',
+    name: '测试名称1',
+    danjubianhao: '263X2016111400000081',
+    danjuleixing: '2632',
+    jine: '2.00',
+    danjuriqi: '2016-11-14',
+    qiyong: true,
+    xingbie: 'male',
+    zuzhi: {
+      id: '22EA0EB9-FABA-4224-B290-5D041A1DF773',
+      code: '0403',
+      name: '委外部3'
+    }
+  },
+  {
+    id: '22',
+    name: '测试名称2',
+    danjubianhao: 'D32016091200000022',
+    danjuleixing: 'D3',
+    jine: '12.00',
+    danjuriqi: '2016-09-12',
+    qiyong: false,
+    xingbie: 'female',
+    zuzhi: {
+      id: '22EA0EB9-FABA-4224-B290-5D041A1DF772',
+      code: '0402',
+      name: '委外部2'
+    }
+  },
+  {
+    id: '33',
+    name: '测试名称3',
+    danjubianhao: '263X2016083000000025',
+    danjuleixing: '2631',
+    jine: '100.00',
+    danjuriqi: '2016-08-30',
+    qiyong: true,
+    xingbie: 'male',
+    zuzhi: null
+  }
+];
+
+const mockColumnsData = [
+  {type: 'string', id: 'id', label: '主键'},
+  {type: 'string', id: 'name', label: '名称', hidden: true},
+  {type: 'string', id: 'danjubianhao', label: '单据编号'},
+  {type: 'enum', id: 'danjuleixing', label: '单据类型',
+    data: [
+      {key: '2631', value: '差旅费借款单'},
+      {key: '2632', value: '会议费借款单'},
+      {key: 'D3', value: '付款单'}
+    ]
+  },
+  {type: 'double', id: 'jine', label: '金额'},
+  {type: 'date', id: 'danjuriqi', label: '单据日期'},
+  {type: 'boolean', id: 'qiyong', label: '启用'},
+  {type: 'enum', id: 'xingbie', label: '性别', data: [
+    {
+      key: 'male',
+      value: '男'
+    },
+    {
+      key: 'female',
+      value: '女'
+    }
+  ]},
+  {type: 'ref', id: 'zuzhi', label: '组织'}
+];
+
+ReactDOM.render(
+    React.createElement(SSCGrid, {
+      columnsModel: mockColumnsData,
+      tableData: tableData,
+      operateColumn: true
+    }),
+  document.getElementById('root')
+);
+</script>
+</body>
+</html>

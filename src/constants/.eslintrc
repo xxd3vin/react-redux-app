@@ -1,0 +1,7 @@
+{
+  "globals": {
+    "G_SCHEME": false,
+    "G_HOST_PORT": false,
+    "G_PATH_PREFIX": false
+  }
+}
