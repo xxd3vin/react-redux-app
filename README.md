@@ -1,4 +1,4 @@
-# ssc30-admin [![Travis][build-badge]][build] [![AppVeyor][appveyor-badge]][appveyor] [![npm][npm-badge]][npm] [![Codecov][codecov-badge]][codecov]
+# react-redux-app [![Travis][build-badge]][build] [![AppVeyor][appveyor-badge]][appveyor] [![npm][npm-badge]][npm] [![Codecov][codecov-badge]][codecov]
 
 <h2>注意：友账表所有功能已经迁移到FC项目。</h2>
 
@@ -240,14 +240,14 @@ https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e#7f
 - https://github.com/marmelab/admin-on-rest 可以借鉴UI
 - https://google.github.io/styleguide/jsoncstyleguide.xml 可以借鉴JSON API Design
 
-[build-badge]: https://travis-ci.org/yyssc/ssc30-admin.svg?branch=master
-[build]: https://travis-ci.org/yyssc/ssc30-admin
+[build-badge]: https://travis-ci.org/xxd3vin/react-redux-app.svg?branch=master
+[build]: https://travis-ci.org/xxd3vin/react-redux-app
 
-[npm-badge]: https://badge.fury.io/js/ssc30-admin.svg
-[npm]: http://badge.fury.io/js/ssc30-admin
+[npm-badge]: https://badge.fury.io/js/react-redux-app.svg
+[npm]: http://badge.fury.io/js/react-redux-app
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/yyssc/ssc30-admin/master.svg
-[codecov]: https://codecov.io/gh/yyssc/ssc30-admin
+[codecov-badge]: https://img.shields.io/codecov/c/github/xxd3vin/react-redux-app/master.svg
+[codecov]: https://codecov.io/gh/xxd3vin/react-redux-app
 
-[appveyor-badge]: https://img.shields.io/appveyor/ci/yyssc/ssc30-admin/master.svg
-[appveyor]: https://ci.appveyor.com/project/yyssc/ssc30-admin
+[appveyor-badge]: https://img.shields.io/appveyor/ci/xxd3vin/react-redux-app/master.svg
+[appveyor]: https://ci.appveyor.com/project/xxd3vin/react-redux-app
