@@ -9,8 +9,6 @@ import classNames from 'classnames';
 import { Button, Grid, Row, Col } from 'react-bootstrap';
 import { Form as SSCForm } from 'ssc-grid';
 
-import FormulaField from '../components/FormulaField';
-
 /**
  * 会计平台 - 转换规则定义
  * 后端接口文档：http://git.yonyou.com/sscplatform/fc_doc/blob/master/exchanger/mapdef.md
@@ -38,14 +36,6 @@ class FormPanel extends Component {
     const {
       fieldsModel
     } = this.props;
-
-    // 准备制作自定义组件 - 公式编辑器
-    const formFieldsModel = fieldsModel.map(({ ...columnModel }) => {
-      if (columnModel.datatype === 20 && columnModel.type === 'custom') {
-        columnModel.component = FormulaField;
-      }
-      return columnModel;
-    });
 
     return (
       <div
@@ -86,7 +76,7 @@ class FormPanel extends Component {
             <Row>
               <Col md={12}>
                 <SSCForm
-                  fieldsModel={formFieldsModel}
+                  fieldsModel={fieldsModel}
                   defaultData={this.props.formData}
                   layout={{
                     columnCount: 3,

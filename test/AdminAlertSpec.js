@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactTestUtils from 'react-addons-test-utils';
+import ReactTestUtils from 'react-dom/test-utils';
 
 import AdminAlert from '../src/components/AdminAlert';
 
@@ -15,6 +15,7 @@ describe('<AdminAlert>', () => {
         <p>test</p>
       </AdminAlert>
     );
+    // eslint-disable-next-line react/no-find-dom-node
     let node = ReactDOM.findDOMNode(instance); // <div> root node
     let ps = node.querySelectorAll('p'); // <table>
     assert.equal(ps[0].textContent, 'test');
