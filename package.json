@@ -8,7 +8,7 @@
     "clean": "rimraf dist",
     "db:reset": "node api/mocks/reset_db.js",
     "demo": "cross-env NODE_ENV=production node ./demoServer.js",
-    "dev": "cross-env NODE_ENV=development nodemon --watch devServer-ybz.js ./devServer-ybz.js",
+    "dev": "cross-env NODE_ENV=development nodemon --watch devServer-ybz.js --watch package.json ./devServer-ybz.js",
     "dev:ybz": "cross-env NODE_ENV=development nodemon --watch devServer-ybz.js ./devServer-ybz.js",
     "dev:yzb": "cross-env NODE_ENV=development nodemon --watch devServer-yzb.js ./devServer-yzb.js",
     "dev:yzb-local": "cross-env NODE_ENV=development nodemon --watch devServer-yzb.js ./devServer-yzb.js",
